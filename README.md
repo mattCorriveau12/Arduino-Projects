@@ -13,3 +13,7 @@ Combined I2C/SPI Project
     Combines both the I2C Project and SPI Project code so that the 2 Arduino Nanos are communicating via both SPI and I2C sending slightly different messages so they can be differentiated when observed through the I2C or SPI Decode Function on an Oscilloscope.
 
     https://youtu.be/OebX1HRy0Fw 
+
+    https://youtu.be/OebX1HRy0Fw?si=UjMQmgacCsbzevC6
+
+    
