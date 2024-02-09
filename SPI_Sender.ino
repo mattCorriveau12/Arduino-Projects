@@ -4,6 +4,9 @@
 
 #include <SPI.h>
 
+int countSPI = 0;
+char c;
+
 void setup (void)
 {
 
@@ -23,17 +26,45 @@ void setup (void)
 void loop (void)
 {
 
-  char c;
-
   // enable Slave Select
   digitalWrite(SS, LOW);    // SS is pin 10
 
-  // send test string
-  for (const char * p = "Hello world!\n" ; c = *p; p++)
-    SPI.transfer (c);
+
+
+//for (const char * p = "SPI Decode!\n" ; c = *p; p++)
+    //SPI.transfer (c);
+
+   if (countSPI==0) {
+    SPImessage1();
+    countSPI++;
+    }
+
+    else {
+    SPImessage2();
+    countSPI=0;
+    }
+
+  
+
+
+
+
 
   // disable Slave Select
   digitalWrite(SS, HIGH);
 
   delay (500);  // 1 seconds delay 
 }  // end of loop
+
+void SPImessage1() {
+  // send test string
+  for (const char * p = "Hello World!\n" ; c = *p; p++)
+    SPI.transfer (c);
+}
+
+void SPImessage2() {
+  // send test string
+  for (const char * p = "SPI Decode!\n" ; c = *p; p++)
+    SPI.transfer (c);
+
+}
