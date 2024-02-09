@@ -27,7 +27,9 @@ void setup (void)
 
   //I2C Setup
   Wire.begin();        // join i2c bus (address optional for master)
-  Serial.begin(9600);  // start serial for output
+  Wire.setClock(400000); // sets I2C transmission rate to fast-mode. Comment 
+                        // this line our or set to 100000 for Normal-mode.
+  Serial.begin(19200);  // start serial for output
   
 }  // end of setup
 
